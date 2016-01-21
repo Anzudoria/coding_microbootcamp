@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- Found this tutorial online for JS charts & used the section for pie charts http://www.webdesignerdepot.com/2013/11/easily-create-stunning-animated-charts-with-chart-js/ -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Pharmacare Top 10 </title>
+        <!-- import plugin script -->
+        <script src="src/Chart.js"></script>
+    </head>
+    <body>
+
+        <h1>BC Health - Top Ten Prescribed Drugs by PharmaCare Reimbursement, 2010-11</h1>
+        <h2>$ millions</h2>
+        
+        
+        <!-- pie chart canvas element -->
+        <canvas id="countries" width="600" height="400"></canvas>
+        
+        <script>
+            
+            // pie chart data
+            var pieData = [
+                {
+                    value: 34.8,
+                    color:"#878BB6",
+                    label: "INFLIXIMAB"
+                },
+                {
+                    value : 32.3,
+                    color : "#4ACAB4",
+                    label: "ATORVASTATIN"
+                },
+                {
+                    value : 27,
+                    color : "#FF8153",
+                    label: "OLANZAPINE"
+                },
+                {
+                    value : 24.1,
+                    color : "#FFEA88",
+                    label: "ADALIMUMAB"
+                },
+                {
+                    value: 22.1,
+                    color: "#9966ff",
+                    label: "RAMIPRIL"
+                },
+                {
+                    value: 21.9,
+                    color: "#ff6699",
+                    label: "METHADONE"
+                },
+                 {
+                    value: 21.4,
+                    color: "#6699ff",
+                    label: "ROSUVASTATIN"
+                },
+                {
+                    value: 20.3,
+                    color: "#ff0066",
+                    label: "ETANERCEPT"
+                },
+                {
+                    value: 20,
+                    color: "#ccffff",
+                    label: "QUETIAPINE FUMARATE"
+                },
+                {
+                    value: 19.2,
+                    color: "#66ff99",
+                    label: "GABAPENTIN"
+                }
+
+            ];
+            // pie chart options
+            var pieOptions = {
+                 segmentShowStroke : false,
+                 animateScale : true
+            }
+            // get pie chart canvas
+            var countries= document.getElementById("countries").getContext("2d");
+            // draw pie chart
+            new Chart(countries).Pie(pieData, pieOptions);
+            
+            
+        </script>
+        <br>
+        <br>
+        <ul style="list-style: none;">
+            <li>INFLIXIMAB:  Rheumatoid arthritis, Ankylosing Spondylitis, Crohn's disease, Psoriasis</li>
+            <li>ATORVASTATIN:  High cholesterol</li>
+            <li>OLANZAPINE:  Schizophrenia, psychosis</li>
+            <li>ADALIMUMAB:  Rheumatoid Arthritis, Psoriatic Arthritis, Ankylosing Spondylitis, Crohn's disease, psoriasis</li>
+            <li>RAMIPRIL:  High blood pressure</li>
+            <li>METHADONE:  Opioid addiction / Pain</li>
+            <li>ROSUVASTATIN:  High cholesterol</li>
+            <li>ETANERCEPT:  Rheumatoid Arthritis, Psoriatic Arthritis, Ankylosing Spondylitis, psoriasis</li>
+            <li>QUETIAPINE FUMARATE:  Schizophrenia, psychosis</li>
+            <li>GABAPENTIN:  Epilepsy</li>
+        </ul>
+
+        <p>Source: <a href="http://catalogue.data.gov.bc.ca/dataset/bc-health-top-ten-prescribed-drugs-by-pharmacare-reimbursement-2010-11/resource/7cf4ff4a-85aa-4046-a85f-a88fcc9efcc2">BC Data</a></p>
+
+    </body>
+</html>
